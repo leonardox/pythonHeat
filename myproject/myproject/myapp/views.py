@@ -110,7 +110,7 @@ def list_stacks(request):
     )
 
 
-def get_server(request, name):
+def get_server(request, name, id):
 
     # header = {
     #     'X-Auth-Token': AUTH_TOKEN,

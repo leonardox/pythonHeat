@@ -14,7 +14,7 @@
 
 
 
-            <ul><a href="{% url 'detail' stack %}">Name: {{ stack }} - {{ id }}</a></ul>
+            <ul><a href="{% url 'detail' stack id %}">Name: {{ stack }} - {{ id }}</a></ul>
         {% endfor %}
     </ul>
 {% else %}

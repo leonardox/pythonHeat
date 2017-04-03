@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^build/(?P<user>\w+)/$', build, name='build'),
     url(r'^stacks/$', list_stacks, name='stacks'),
     url(r'^create/(?P<name>\w+)/$', create_stack, name='create'),
-    url(r'^detail/(?P<name>\w+)/$', get_server, name='detail'),
+    url(r'^detail/(?P<name>\w+)/(?P<id>.+)/$', get_server, name='detail'),
 ]
