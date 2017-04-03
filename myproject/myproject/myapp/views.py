@@ -120,7 +120,7 @@ def create_stack(request, name):
     #
     # _get_token()
 
-    subprocess.Popen("echo ola")
+    subprocess.Popen("touch ola")
     return HttpResponse({"listagem feita"})
 
 
