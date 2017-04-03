@@ -96,7 +96,6 @@ def list_stacks(request):
     r = requests.get('http://172.29.236.100:8004/v1/default/stacks', headers=header)
     print r.text
 
-
     # Render list page with the documents and the form
     return HttpResponse({"listagem feita"})
 
@@ -107,24 +106,13 @@ def _get_token():
     }
 
     payload = {
-        "auth":
-            {"identity":
-                 {"methods":
-                      ["password"],
-                  "password": {
-                      "user": {"domain":
-                                   {"name": "Default"},
-                               "name": "admin",
-                               "password": "f55597e72a9b8eba7e3dc90891e6484349918499a698e2dc3eb26"}}},
-             "scope":
-                 {"project":
-                      {"domain":
-                           {"name": "Default"},
-                       "name": "admin"}
-                  }
-             }
+        {"auth": {"identity": {"methods": ["password"], "password": {
+            "user": {"domain": {"name": "Default"}, "name": "admin",
+                     "password": "f55597e72a9b8eba7e3dc90891e6484349918499a698e2dc3eb26"}}},
+                  "scope": {"project": {"domain": {"name": "Default"}, "name": "admin"}}}}
     }
-    r = requests.post('https://10.11.4.100:5000/v3/auth/tokens', data=payload, headers=header, verify=False)
+    r = requests.post('https://10.11.4.100:5000/v3/auth/tokens', data=payload, headers=header,
+                      verify=False)
     print 'header: ', r.headers
     # print 'teste: ', r.headers['X-Auth-Token']
     print r.text
