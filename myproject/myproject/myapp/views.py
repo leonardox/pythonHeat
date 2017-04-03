@@ -122,7 +122,9 @@ def get_server(request, name, id):
 
     r = requests.get(url, headers=header)
 
-    return HttpResponse(r.text)
+
+
+    return HttpResponse(r.json()['stack']['outputs'][1]["output_value"])
 
 
 
