@@ -13,6 +13,7 @@ from myproject.myapp.forms import DocumentForm
 from keystoneauth1 import loading
 from keystoneauth1 import session
 from heatclient import client
+import json
 
 AUTH_TOKEN = "gAAAAABY4l-aP0V8WKtjIyVQqBRDjzjn6A6Pv9_wnyYnaTFxzKFKIJ6Kgnnpwj5bzBEjBx1FGwQtBVN3VkAmBolYFbmTHcTggnIIcEOg5B5bD2G_k6ozSUsXklFRWly6N59nJXXuM71JDiKGa5d3L6C4oAEG8FVsNPdzEjub5chzPrScejoH0FM"
 
@@ -98,7 +99,7 @@ def list_stacks(request):
     r = requests.get('http://172.29.236.100:8004/v1/default/stacks', headers=header)
 
     # Render list page with the documents and the form
-    return HttpResponse(r.text)
+    return HttpResponse(json.dumps(r.text))
 
 
 def create_stack(request, name):
