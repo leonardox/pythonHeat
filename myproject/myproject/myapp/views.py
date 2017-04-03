@@ -12,7 +12,7 @@ from keystoneauth1 import loading
 from keystoneauth1 import session
 from heatclient import client
 
-AUTH_TOKEN = ""
+AUTH_TOKEN = "gAAAAABY4l-aP0V8WKtjIyVQqBRDjzjn6A6Pv9_wnyYnaTFxzKFKIJ6Kgnnpwj5bzBEjBx1FGwQtBVN3VkAmBolYFbmTHcTggnIIcEOg5B5bD2G_k6ozSUsXklFRWly6N59nJXXuM71JDiKGa5d3L6C4oAEG8FVsNPdzEjub5chzPrScejoH0FM"
 
 
 def list(request):
@@ -87,7 +87,7 @@ def list_stacks(request):
     #
     #
     #
-    _get_token()
+    # _get_token()
 
     header = {
         'X-Auth-Token': AUTH_TOKEN,
