@@ -167,7 +167,7 @@ def create_stack(request, name):
         print line,
     retval = p.wait()
 
-    return HttpResponse({"listagem feita"})
+    return redirect('stacks')
 
 
 def _get_token():
