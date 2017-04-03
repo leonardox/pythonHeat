@@ -112,7 +112,7 @@ def create_stack(request, name):
     # curl  -H 'X-Auth-Token: gAAAAABY4kZZKo_2qOESqoEj6GOG2YpT1jzfkkIh1Cr9QiwriRLyTSF4DLEn8XqNRMpyO-RMZAkANyPjgJsx3mmI-3jCXIYL1VaG61q8J71Pnj3dPRJT1nWOgBBXB1ekMElaNsuR46W49teS1BQci2E393W3jApMnUS4odes9j4qZG9I8hljqOU'
     #
     #
-#
+    #
     #
     #
     #
@@ -120,11 +120,14 @@ def create_stack(request, name):
     #
     # _get_token()
 
-    subprocess.Popen("touch ola")
+    # subprocess.Popen("touch ola")
+    p = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
+
+    for line in p.stdout.readlines():
+        print line,
+    retval = p.wait()
     return HttpResponse({"listagem feita"})
-
-
-
 
 
 def _get_token():
