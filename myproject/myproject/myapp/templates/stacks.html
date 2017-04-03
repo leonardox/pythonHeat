@@ -9,8 +9,8 @@
 <!-- List of uploaded documents -->
 {% if stacks %}
     <ul>
-        {% for stack, url in stacks %}
-            <ul><a href="{% url detail stack %}">Name: {{ stack }}</a></ul>
+        {% for stack in stacks %}
+            <ul><a href="{% url detail stack.0 %}">Name: {{ stack.0 }}</a></ul>
         {% endfor %}
     </ul>
 {% else %}
