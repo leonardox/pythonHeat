@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import subprocess
 import requests
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -94,10 +95,36 @@ def list_stacks(request):
     }
 
     r = requests.get('http://172.29.236.100:8004/v1/default/stacks', headers=header)
+
     print r.text
 
     # Render list page with the documents and the form
     return HttpResponse({"listagem feita"})
+
+
+def create_stack(request, name):
+    # Handle file upload
+
+    #
+    #
+    #
+    #
+    # curl  -H 'X-Auth-Token: gAAAAABY4kZZKo_2qOESqoEj6GOG2YpT1jzfkkIh1Cr9QiwriRLyTSF4DLEn8XqNRMpyO-RMZAkANyPjgJsx3mmI-3jCXIYL1VaG61q8J71Pnj3dPRJT1nWOgBBXB1ekMElaNsuR46W49teS1BQci2E393W3jApMnUS4odes9j4qZG9I8hljqOU'
+    #
+    #
+#
+    #
+    #
+    #
+    #
+    #
+    # _get_token()
+
+    subprocess.Popen("echo ola")
+    return HttpResponse({"listagem feita"})
+
+
+
 
 
 def _get_token():
