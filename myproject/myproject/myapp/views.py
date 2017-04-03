@@ -98,8 +98,11 @@ def list_stacks(request):
 
     r = requests.get('http://172.29.236.100:8004/v1/default/stacks', headers=header)
 
+    # for key in r['stacks']:
+
+
     # Render list page with the documents and the form
-    return HttpResponse(r)
+    return HttpResponse(r['stacks'])
 
 
 def create_stack(request, name):
