@@ -101,6 +101,7 @@ def list_stacks(request):
     list = []
     for key in r.json()['stacks']:
         list.append(key['links'][0]['href'])
+        list.append("\n")
 
     # Render list page with the documents and the form
     return HttpResponse(list)
