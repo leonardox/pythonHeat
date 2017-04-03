@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>Minimal Django File Upload Example</title>
+</head>
+
+<body>
+<!-- List of uploaded documents -->
+{% if stacks %}
+    <ul>
+        {% for stack in stacks %}
+            <a>stack</a>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No documents.</p>
+{% endif %}
+
+<!-- Upload form. Note enctype attribute! -->
+</body>
+
+</html>
