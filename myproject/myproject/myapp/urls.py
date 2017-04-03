@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^list/$', list, name='list'),
     url(r'^build/(?P<user>\w+)/$', build, name='build'),
     url(r'^stacks/$', list_stacks, name='stacks'),
-    url(r'^create/$', create_stack, name='create'),
+    url(r'^create/(?P<name>\w+)/$', create_stack, name='create'),
 ]

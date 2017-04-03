@@ -103,7 +103,7 @@ def list_stacks(request):
     return HttpResponse({"listagem feita"})
 
 
-def create_stack(request):
+def create_stack(request, name):
     # Handle file upload
 
     #
@@ -135,7 +135,7 @@ def create_stack(request):
     subprocess.Popen('openstack server list', shell=True, stdout=subprocess.PIPE,
                      stderr=subprocess.STDOUT)
    '''
-    p = subprocess.Popen('openstack stack create -t /home/grupo3/node.yaml ' + str(uuid.uuid1()) , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen('openstack stack create -t /home/grupo3/node.yaml ' + name , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
     for line in p.stdout.readlines():
         print line,
