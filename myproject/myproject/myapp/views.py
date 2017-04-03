@@ -102,7 +102,7 @@ def list_stacks(request):
     return HttpResponse({"listagem feita"})
 
 
-def create_stack(request, name):
+def create_stack(request):
     # Handle file upload
 
     #
