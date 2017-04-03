@@ -100,7 +100,7 @@ def list_stacks(request):
     stacks= []
     for key in r.json()['stacks']:
         pos = (key['links'][0]['href']).split('/')
-        stacks.append(("Stack Name: " + pos[-2], pos[-2] + '/' + pos[-1]))
+        stacks.append((pos[-2], pos[-1]))
 
     # Render list page with the documents and the form
     return render(
@@ -110,7 +110,7 @@ def list_stacks(request):
     )
 
 
-def get_server(request, url):
+def get_server(request, name, id):
 
     # header = {
     #     'X-Auth-Token': AUTH_TOKEN,

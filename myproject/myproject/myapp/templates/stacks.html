@@ -10,7 +10,7 @@
 {% if stacks %}
     <ul>
         {% for stack, url in stacks %}
-            <ul><a href="{% url detail url %}">{{ stack }}</a></ul>
+            <ul><a href="{% url detail stack url %}">Name: {{ stack }}</a></ul>
         {% endfor %}
     </ul>
 {% else %}
