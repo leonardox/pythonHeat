@@ -112,17 +112,19 @@ def list_stacks(request):
 
 def get_server(request, name, id):
 
-    # header = {
-    #     'X-Auth-Token': AUTH_TOKEN,
-    # }
-    #
-    # r = requests.get(url, headers=header)
-    #
-    #
-    # return HttpResponse(r.text)
+
+    url = 'http://172.29.236.100:8004/v1/06434040a7f34069939970f384fc2b36/stacks/'
+
+    header = {
+        'X-Auth-Token': AUTH_TOKEN,
+    }
+    url += name + "/" + id
+
+    r = requests.get(url, headers=header)
+
+    return HttpResponse(r.text)
 
 
-    return HttpResponse("Pimba")
 
 
 def create_stack(request, name):
