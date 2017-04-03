@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import subprocess
 import requests
+import uuid
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
@@ -134,7 +135,7 @@ def create_stack(request):
     subprocess.Popen('openstack server list', shell=True, stdout=subprocess.PIPE,
                      stderr=subprocess.STDOUT)
    '''
-    p = subprocess.Popen('openstack server list', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen('openstack stack create -t /home/grupo3/node.yaml ' + str(uuid.uuid1()) , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
     for line in p.stdout.readlines():
         print line,
