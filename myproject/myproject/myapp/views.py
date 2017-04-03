@@ -109,6 +109,22 @@ def list_stacks(request):
         {'stacks': stacks}
     )
 
+
+def get_server(request, url):
+
+    header = {
+        'X-Auth-Token': AUTH_TOKEN,
+    }
+
+    r = requests.get(url, headers=header)
+
+
+    return HttpResponse(r.text)
+
+
+    pass
+
+
 def create_stack(request, name):
     # Handle file upload
 
