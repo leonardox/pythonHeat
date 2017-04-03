@@ -121,9 +121,20 @@ def create_stack(request):
     # _get_token()
 
     # subprocess.Popen("touch ola")
-    print "antes"
+    subprocess.Popen('. venv_openstack/bin/activate', shell=True, stdout=subprocess.PIPE,
+                     stderr=subprocess.STDOUT)
+    subprocess.Popen('. /home/grupo3/admin_openrc ', shell=True, stdout=subprocess.PIPE,
+                     stderr=subprocess.STDOUT)
+
+    '''
+    subprocess.Popen('openstack server list', shell=True, stdout=subprocess.PIPE,
+                     stderr=subprocess.STDOUT)
+    subprocess.Popen('openstack server list', shell=True, stdout=subprocess.PIPE,
+                     stderr=subprocess.STDOUT)
+    subprocess.Popen('openstack server list', shell=True, stdout=subprocess.PIPE,
+                     stderr=subprocess.STDOUT)
+   '''
     p = subprocess.Popen('openstack server list', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    print "depois"
 
     for line in p.stdout.readlines():
         print line,
