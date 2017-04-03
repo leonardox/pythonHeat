@@ -121,12 +121,14 @@ def create_stack(request, name):
     # _get_token()
 
     # subprocess.Popen("touch ola")
+    print "antes"
     p = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-
+    print "depois"
 
     for line in p.stdout.readlines():
         print line,
     retval = p.wait()
+
     return HttpResponse({"listagem feita"})
 
 
