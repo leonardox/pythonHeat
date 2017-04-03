@@ -2,7 +2,7 @@
 import subprocess
 import requests
 import uuid
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
@@ -71,8 +71,7 @@ def build(request, user):
     # executar a aplicacao
 
     # exibir ip da instancia
-
-    return HttpResponse("building")
+    return redirect('create', name=user)
 
 
 def list_stacks(request):
