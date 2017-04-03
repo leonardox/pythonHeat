@@ -97,8 +97,6 @@ def list_stacks(request):
 
     r = requests.get('http://172.29.236.100:8004/v1/default/stacks', headers=header)
 
-    print r.items()
-
     # Render list page with the documents and the form
     return HttpResponse(r.text)
 
