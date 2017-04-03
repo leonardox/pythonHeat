@@ -102,7 +102,7 @@ def list_stacks(request):
 
 
     # Render list page with the documents and the form
-    return HttpResponse(r['stacks'])
+    return HttpResponse(r.json()['stacks'])
 
 
 def create_stack(request, name):
