@@ -126,6 +126,8 @@ def _get_token():
     }
     r = requests.post('https://10.11.4.100:5000/v3/auth/tokens', data=payload, verify=False)
     print 'header: ', r.headers
+    print 'teste: ', r.headers['X-Auth-Token']
+    print r.text
     if 'X-Subject-Token' in r.headers:
         AUTH_TOKEN = r.headers['X-Subject-Token']
         print AUTH_TOKEN
