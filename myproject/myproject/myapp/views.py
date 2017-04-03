@@ -97,10 +97,10 @@ def list_stacks(request):
 
     r = requests.get('http://172.29.236.100:8004/v1/default/stacks', headers=header)
 
-    stacks = []
+    stacks= []
     for key in r.json()['stacks']:
         pos = (key['links'][0]['href']).split('/')
-        stacks.append(pos[-2] + '/' + pos[-1])
+        stacks.append(("Stack Name: " + pos[-2], pos[-2] + '/' + pos[-1]))
 
     # Render list page with the documents and the form
     return render(
@@ -112,17 +112,17 @@ def list_stacks(request):
 
 def get_server(request, url):
 
-    header = {
-        'X-Auth-Token': AUTH_TOKEN,
-    }
+    # header = {
+    #     'X-Auth-Token': AUTH_TOKEN,
+    # }
+    #
+    # r = requests.get(url, headers=header)
+    #
+    #
+    # return HttpResponse(r.text)
 
-    r = requests.get(url, headers=header)
 
-
-    return HttpResponse(r.text)
-
-
-    pass
+    return HttpResponse("Pimba")
 
 
 def create_stack(request, name):
